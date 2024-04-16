@@ -3,6 +3,7 @@ import "./work.css";
 
 const WorkItems = ({ item }) => {
   const [activeDialog, setActiveDialog] = useState(false);
+  const [enlargeImage, setEnlargeImage] = useState(false);
 
   const openDialog = () => {
     setActiveDialog(true);
@@ -12,18 +13,42 @@ const WorkItems = ({ item }) => {
     setActiveDialog(false);
   };
 
-  const openImageInNewWindow = () => {
-    window.open(item.image, "_blank");
+  const openImage = () => {
+    setEnlargeImage(true);
   };
 
   return (
     <div className="work__card" key={item.id}>
-      <img
-        src={item.image}
-        alt=""
-        className="work__img"
-        onClick={openImageInNewWindow}
-      />
+      <img src={item.image} alt="" className="work__img" onClick={openImage} />
+
+      {enlargeImage && (
+        <div onClick={() => setEnlargeImage(false)}>
+          <div className="popup-overlay">
+            <div className="popup-img">
+              <span
+                className="popup__close"
+                onClick={() => setEnlargeImage(false)}
+                style={{
+                  cursor: "pointer",
+                  position: "absolute",
+                  top: "0",
+                  right: "0",
+                  padding: "10px",
+                }}
+              >
+                &times;
+              </span>
+              <img
+                src={item.image}
+                alt=""
+                className="popup__img"
+                onClick={(e) => e.stopPropagation()}
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
       <h3 className="work__title">{item.title}</h3>
       <button className="work__button" onClick={openDialog}>
         Details

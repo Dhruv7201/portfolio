@@ -53,7 +53,7 @@ export const projectsData = [
     title: "Text Detection",
     category: "backend",
     description:
-      "Made a text detection and recognition using Python, yolov5/yolovNAS, OpenCV, Tesseract OCR. This project is used to detect and recognize text and batch number from images.",
+      "Made a text detection and recognition using Python, yolov5/yolovNAS, OpenCV, Tesseract OCR. This project is used to detect and recognize text and batch number from images. Used in DWS Machines for Accurate Batch Number Detection.",
   },
   {
     id: 6,
