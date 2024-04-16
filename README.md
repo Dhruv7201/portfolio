@@ -44,14 +44,6 @@ This portfolio site serves as a platform to exhibit my proficiency in different 
 - **VIM**
 - **Linux**
 
-## Installation
-To set up the portfolio site locally, follow these steps:
-
-1. Clone this repository to your local machine.
-2. Navigate to the project directory.
-3. Install dependencies by running `npm install`.
-4. Start the development server with `npm start`.
-5. Access the site through your web browser at `http://localhost:3000`.
 
 ## Usage
 You can visit my portfolio site at `https://portfolio-6f57d.web.app/`
