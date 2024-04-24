@@ -23,21 +23,11 @@ const WorkItems = ({ item }) => {
 
       {enlargeImage && (
         <div onClick={() => setEnlargeImage(false)}>
-          <div className="popup-overlay">
+          <div
+            className="popup-overlay"
+            style={{ backgroundColor: "rgba(0, 0, 0, 0.8)", zIndex: "100" }}
+          >
             <div className="popup-img">
-              <span
-                className="popup__close"
-                onClick={() => setEnlargeImage(false)}
-                style={{
-                  cursor: "pointer",
-                  position: "absolute",
-                  top: "0",
-                  right: "0",
-                  padding: "10px",
-                }}
-              >
-                &times;
-              </span>
               <img
                 src={item.image}
                 alt=""
@@ -45,6 +35,21 @@ const WorkItems = ({ item }) => {
                 onClick={(e) => e.stopPropagation()}
               />
             </div>
+            <span
+              className="popup__close"
+              onClick={() => setEnlargeImage(false)}
+              style={{
+                borderColor: "black",
+                color: "black",
+                cursor: "pointer",
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                padding: "5px",
+              }}
+            >
+              &times;
+            </span>
           </div>
         </div>
       )}
