@@ -9,7 +9,7 @@ export const Data = [
     id: 2,
     title: "Drashti Bhrambhatt",
     description:
-      "Its always inspiring to work alongside Dhruv. His constant drive to learn new things and expand his knowledge is infectious, and his dedication to their work is truly admirable. He consistently go above and beyond.",
+      "Its always inspiring to work alongside Dhruv. His constant drive to learn new things and expand his knowledge is infectious, and his dedication to his work is truly admirable. He consistently go above and beyond.",
   },
   {
     id: 3,
