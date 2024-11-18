@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import './services.css'
 
 const Services = () => {
@@ -7,6 +7,19 @@ const Services = () => {
   const toggleTab = (index) => {
     setToggleState(index)
   }
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        setToggleState(0);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
 
   return (
     <section className="services section" id="services">
@@ -22,8 +35,8 @@ const Services = () => {
             </h3>
             <span className="services__button"onClick={() => toggleTab(3)}>View More <i className="uil uil-arrow-right services__button-icon"></i>
             </span>
-            <div className={toggleState === 3 ? "services__model active-model" : "services__model"}>
-              <div className="services__model-content">
+            <div className={toggleState === 3 ? "services__model active-model" : "services__model"} onClick={() => toggleTab(0)}>
+              <div className="services__model-content" onClick={(e) => e.stopPropagation()}>
                 <i onClick={() => toggleTab(0)} className="uil uil-times
                  services__model-close"></i>
 
@@ -76,8 +89,8 @@ const Services = () => {
             </h3>
             <span className="services__button" onClick={() => toggleTab(1)}>View More <i className="uil uil-arrow-right services__button-icon"></i>
             </span>
-            <div className={toggleState === 1 ? "services__model active-model" : "services__model"}>
-              <div className="services__model-content">
+            <div className={toggleState === 1 ? "services__model active-model" : "services__model"} onClick={() => toggleTab(0)}>
+              <div className="services__model-content" onClick={(e) => e.stopPropagation()}>
                 <i onClick={() => toggleTab(0)} className="uil uil-times
                  services__model-close"></i>
 
@@ -132,8 +145,8 @@ const Services = () => {
             </h3>
             <span className="services__button" onClick={() => toggleTab(2)}>View More <i className="uil uil-arrow-right services__button-icon"></i>
             </span>
-            <div className={toggleState === 2 ? "services__model active-model" : "services__model"}>
-              <div className="services__model-content">
+            <div className={toggleState === 2 ? "services__model active-model" : "services__model"} onClick={() => toggleTab(0)}>
+              <div className="services__model-content" onClick={(e) => e.stopPropagation()}>
                 <i onClick={() => toggleTab(0)}className="uil uil-times
                  services__model-close"></i>
 
