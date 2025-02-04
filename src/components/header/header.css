@@ -51,6 +51,15 @@
     box-shadow: 0 1px 4px rgba(0, 0, 0, .15);
 }
 
+/* Global hover animation */
+a:hover,
+button:hover,
+.nav__link:hover,
+.work__button:hover {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1.05);
+}
+
 /* Breakpoint */
 /* For medium devices */
 @media screen and (max-width: 768px) {
