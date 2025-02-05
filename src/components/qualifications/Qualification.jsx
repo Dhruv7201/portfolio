@@ -8,6 +8,66 @@ const Qualification = () => {
     setToggleTabs(index);
   };
 
+  const experienceData = [
+    {
+      title: "Python Developer",
+      subtitle: "Qtech365 (Msbc Group)",
+      calendar: "Jan 2024 - Present",
+    },
+    {
+      title: "Associate Software Engineer",
+      subtitle: "Ethics InfoTech",
+      calendar: "Aug 2023 - Jan 2024",
+    },
+    {
+      title: "Trainee Software Engineer",
+      subtitle: "Ethics InfoTech",
+      calendar: "Mar 2023 - Aug 2023",
+    },
+  ];
+
+  const educationData = [
+    {
+      title: "Bachelor's Degree",
+      subtitle: "Parul University",
+      calendar: "2020 - 2023",
+    },
+    {
+      title: "Diploma Computer Engineering",
+      subtitle: "Parul Technology",
+      calendar: "2016 - 2019",
+    },
+  ];
+
+  const renderQualificationData = (data) => {
+    return data.map((item, index) => (
+      <div className="qualification__data" key={index}>
+        {index % 2 !== 0 && <div></div>}
+        {index % 2 !== 0 && 
+        <div>
+          <span className="qualification__rounder"></span>
+          <span className="qualification__line"></span>
+        </div>
+        }
+
+        <div>
+          <h3 className="qualification__title">{item.title}</h3>
+          <span className="qualification__subtitle">{item.subtitle}</span>
+          <div className="qualification__calendar">
+            <i className="uil uil-calendar-alt"></i> {item.calendar}
+          </div>
+        </div>
+
+        {index % 2 === 0 && (
+          <div>
+            <span className="qualification__rounder"></span>
+            <span className="qualification__line"></span>
+          </div>
+        )}
+      </div>
+    ));
+  };
+
   return (
     <section className="qualification section">
       <h2 className="section__title">Qualification</h2>
@@ -46,41 +106,9 @@ const Qualification = () => {
                 : "qualification__content"
             }
           >
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">
-                  Associate Software Engineer
-                </h3>
-                <span className="qualification__subtitle">Ethics InfoTech</span>
-                <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i> Aug 2023 - Present
-                </div>
-              </div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-            </div>
-
-            <div className="qualification__data">
-              <div></div>
-
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-
-              <div>
-                <h3 className="qualification__title">
-                  Trainee Software Engineer
-                </h3>
-                <span className="qualification__subtitle">Ethics InfoTech</span>
-                <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i> Mar 2023 - Aug 2023
-                </div>
-              </div>
-            </div>
+            {renderQualificationData(experienceData)}
           </div>
+
           <div
             className={
               toggleTabs === 1
@@ -88,42 +116,7 @@ const Qualification = () => {
                 : "qualification__content"
             }
           >
-            <div className="qualification__data">
-              <div>
-                <h3 className="qualification__title">Bachelor's Degree</h3>
-                <span className="qualification__subtitle">
-                  Parul University
-                </span>
-                <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i> 2020 - 2023
-                </div>
-              </div>
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-            </div>
-
-            <div className="qualification__data">
-              <div></div>
-
-              <div>
-                <span className="qualification__rounder"></span>
-                <span className="qualification__line"></span>
-              </div>
-
-              <div>
-                <h3 className="qualification__title">
-                  Diploma Computer Engineering
-                </h3>
-                <span className="qualification__subtitle">
-                  Parul Technology
-                </span>
-                <div className="qualification__calendar">
-                  <i className="uil uil-calendar-alt"></i> 2016 - 2019
-                </div>
-              </div>
-            </div>
+            {renderQualificationData(educationData)}
           </div>
         </div>
       </div>
