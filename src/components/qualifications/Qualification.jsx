@@ -12,13 +12,15 @@ const Qualification = () => {
   const renderQualificationData = (data) => {
     return data.map((item, index) => (
       <div className="qualification__data" key={index}>
-        {index % 2 !== 0 && <div></div>}
-        {index % 2 !== 0 && 
-        <div>
-          <span className="qualification__rounder"></span>
-          <span className="qualification__line"></span>
-        </div>
-        }
+        {index % 2 !== 0 && (
+        <>
+          <div></div>
+          <div>
+            <span className="qualification__rounder"></span>
+            <span className="qualification__line"></span>
+          </div>
+        </>
+        )}
 
         <div>
           <h3 className="qualification__title">{item.title}</h3>
