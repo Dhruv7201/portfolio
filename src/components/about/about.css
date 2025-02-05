@@ -43,7 +43,9 @@
   margin-bottom: var(--mb-2-5);
   text-align: justify;
 }
-
+.about__data {
+  text-align: center;
+}
 /*=============== BREAKPOINTS ===============*/
 /* For large devices */
 @media screen and (max-width: 992px) {
@@ -76,7 +78,7 @@
 /* For medium devices */
 @media screen and (max-width: 576px) {
   .about__info {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
   .about__description {
     padding: 0;
