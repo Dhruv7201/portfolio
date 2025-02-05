@@ -69,11 +69,6 @@ function App() {
 
   return (
     <>
-      <div id="circles-container">
-        {Array.from({ length: 10 }).map((_, i) => (
-          <div key={i} className="circle"></div>
-        ))}
-      </div>
       <Header />
       <main className="main">
         <Home />

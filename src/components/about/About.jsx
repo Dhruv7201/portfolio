@@ -30,7 +30,7 @@ const About = () => {
             Git, Github, Docker, Linux, SQL, NoSQL, REST API, GraphQL, web
             scraping, machine learning, computer vision, and more.
           </p>
-          <a download="" href={CV} className="button button--flex" style={{cursor: "none"}}>
+          <a download="" href={CV} className="button button--flex">
             Download CV
             <svg
               class="button__icon"

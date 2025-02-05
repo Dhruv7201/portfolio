@@ -27,12 +27,12 @@
 }
 
 .services__button {
+  cursor: pointer;
   color: var(--first-color);
   font-size: var(--small-font-size);
   display: inline-flex;
   align-items: center;
   column-gap: 0.25rem;
-  cursor: none;
 }
 
 .services__button-icon {

@@ -8,7 +8,6 @@
     border-radius: 0.4rem;
     z-index: var(--z-tooltip);
     transition: .4s;
-    cursor: none;
 }
 
 .scrollup__icon {

@@ -39,7 +39,6 @@
   margin-bottom: var(--mb-0-75);
 }
 .contact__button {
-  cursor: none;
   color: var(--text-color);
   font-size: var(--small-font-size);
   display: inline-flex;
