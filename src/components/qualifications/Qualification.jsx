@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./qualification.css";
+import { experienceData, educationData } from "./Data";
 
 const Qualification = () => {
   const [toggleTabs, setToggleTabs] = useState(2);
@@ -7,37 +8,6 @@ const Qualification = () => {
   const toggleTab = (index) => {
     setToggleTabs(index);
   };
-
-  const experienceData = [
-    {
-      title: "Python Developer",
-      subtitle: "Qtech365 (Msbc Group)",
-      calendar: "Jan 2024 - Present",
-    },
-    {
-      title: "Associate Software Engineer",
-      subtitle: "Ethics InfoTech",
-      calendar: "Aug 2023 - Jan 2024",
-    },
-    {
-      title: "Trainee Software Engineer",
-      subtitle: "Ethics InfoTech",
-      calendar: "Mar 2023 - Aug 2023",
-    },
-  ];
-
-  const educationData = [
-    {
-      title: "Bachelor's Degree",
-      subtitle: "Parul University",
-      calendar: "2020 - 2023",
-    },
-    {
-      title: "Diploma Computer Engineering",
-      subtitle: "Parul Technology",
-      calendar: "2016 - 2019",
-    },
-  ];
 
   const renderQualificationData = (data) => {
     return data.map((item, index) => (
