@@ -44,9 +44,9 @@ const BackEnd = () => {
             </div>
           </div>
           <div className="skills__data">
-            <i class="bx bxs-face-mask skill__logo"></i>
+            <i class='bx bx-file-find'></i>
             <div>
-              <h3 className="skills__name">IOT</h3>
+              <h3 className="skills__name">Scrapping</h3>
               <span className="skills__level">Intermediate</span>
             </div>
           </div>
