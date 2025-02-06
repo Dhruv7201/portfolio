@@ -5,6 +5,8 @@ import work4 from "../../assets/webhook.png";
 import work5 from "../../assets/vendingmachine.png";
 import work6 from "../../assets/git-lab.png";
 import work7 from "../../assets/ocr.png";
+import work8 from "../../assets/pdf_scrapping.png";
+import work9 from "../../assets/india_mart.png";
 
 export const projectsData = [
   {
@@ -48,6 +50,14 @@ export const projectsData = [
       "Made a vending machine using Raspberry Pi, python, Flask, Paytm API. For automatic vending process based on QR code.",
   },
   {
+    id: 6,
+    image: work6,
+    title: "GitLab Dashboard",
+    category: "fullstack",
+    description:
+      "Made a dashboard using React, Material UI, GitLab GraphQL API. This dashboard is used to monitor and analyze the GitLab projects.",
+  },
+  {
     id: 7,
     image: work7,
     title: "Text Detection",
@@ -56,12 +66,20 @@ export const projectsData = [
       "Made a text detection and recognition using Python, yolov5/yolovNAS, OpenCV, Tesseract OCR. This project is used to detect and recognize text and batch number from images. Used in DWS Machines for Accurate Batch Number Detection.",
   },
   {
-    id: 6,
-    image: work6,
-    title: "GitLab Dashboard",
-    category: "fullstack",
+    id: 8,
+    image: work8,
+    title: "PDF Scrapping",
+    category: "scrapping",
     description:
-      "Made a dashboard using React, Material UI, GitLab GraphQL API. This dashboard is used to monitor and analyze the GitLab projects.",
+      "Made scrapping scripts using python requests, beautifulsoup, pdfplumber, etc. This script is used to scrap data from PDF files website and store it in CSV file.",
+  },
+  {
+    id: 9,
+    image: work9,
+    title: "India Mart Scrapping",
+    category: "scrapping",
+    description:
+      "Made dynamic scrapping scripts that runs asynchronously and gathered hague amount of data from India Mart website. This script is used to scrap data from India Mart website and store it in CSV file.", 
   },
 ];
 
@@ -81,4 +99,7 @@ export const projectsNav = [
   {
     name: "iot",
   },
+  {
+    name: "scrapping",
+  }
 ];
