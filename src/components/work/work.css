@@ -91,7 +91,7 @@
 /* For medium devices */
 @media screen and (max-width: 768px) {
   .work__container {
-    grid-template-columns: repeat(max-content);
+    grid-template-columns: repeat(1, max-content);
   }
 }
 
