@@ -10,20 +10,36 @@ import work9 from "../../assets/india_mart.png";
 
 export const projectsData = [
   {
-    id: 1,
-    image: work1,
-    title: "Portfolio",
-    category: "web",
-    description:
-      "Made static portfolio website using React, vanilla CSS, firebase and google domains. This website is used to showcase my projects and skills.",
-  },
-  {
     id: 2,
     image: work2,
     title: "Employee Monitoring",
     category: "fullstack",
     description:
       "Made Employee Monitoring System using React, FastAPI, Python libs (win32, pynput, pyautoGUI, etc), rabbitMQ and MongoDB. This system can monitor employee activity, take screenshots, and send it to the server.",
+  },
+  {
+    id: 6,
+    image: work6,
+    title: "GitLab Dashboard",
+    category: "fullstack",
+    description:
+      "Made a dashboard using React, Material UI, GitLab GraphQL API. This dashboard is used to monitor and analyze the GitLab projects.",
+  },
+  {
+    id: 7,
+    image: work7,
+    title: "Text Detection",
+    category: "backend",
+    description:
+      "Made a text detection and recognition using Python, yolov5/yolovNAS, OpenCV, Tesseract OCR. This project is used to detect and recognize text and batch number from images. Used in DWS Machines for Accurate Batch Number Detection.",
+  },
+  {
+    id: 1,
+    image: work1,
+    title: "Portfolio",
+    category: "web",
+    description:
+      "Made static portfolio website using React, vanilla CSS, firebase and google domains. This website is used to showcase my projects and skills.",
   },
   {
     id: 3,
@@ -50,22 +66,6 @@ export const projectsData = [
       "Made a vending machine using Raspberry Pi, python, Flask, Paytm API. For automatic vending process based on QR code.",
   },
   {
-    id: 6,
-    image: work6,
-    title: "GitLab Dashboard",
-    category: "fullstack",
-    description:
-      "Made a dashboard using React, Material UI, GitLab GraphQL API. This dashboard is used to monitor and analyze the GitLab projects.",
-  },
-  {
-    id: 7,
-    image: work7,
-    title: "Text Detection",
-    category: "backend",
-    description:
-      "Made a text detection and recognition using Python, yolov5/yolovNAS, OpenCV, Tesseract OCR. This project is used to detect and recognize text and batch number from images. Used in DWS Machines for Accurate Batch Number Detection.",
-  },
-  {
     id: 8,
     image: work8,
     title: "PDF Scrapping",
@@ -88,14 +88,15 @@ export const projectsNav = [
     name: "all",
   },
   {
+    name: "fullstack",
+  },
+  {
     name: "web",
   },
   {
     name: "backend",
   },
-  {
-    name: "fullstack",
-  },
+
   {
     name: "iot",
   },

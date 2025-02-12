@@ -24,6 +24,8 @@
   grid-template-columns: repeat(2, max-content);
   gap: 3rem;
   justify-content: center;
+  max-height: 550px;
+  overflow-y: auto;
 }
 
 .work__card {
