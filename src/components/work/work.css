@@ -107,6 +107,7 @@
     font-size: var(--small-font-size);
   }
   .work__filters {
+    flex-wrap: wrap;
     column-gap: 0.25rem;
   }
 }
