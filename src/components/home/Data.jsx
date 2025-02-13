@@ -1,4 +1,5 @@
 import React from 'react'
+import BlurText from "./BlurText";
 
 
 const Data = () => {
@@ -12,7 +13,14 @@ const Data = () => {
             <img src="https://fonts.gstatic.com/s/e/notoemoji/latest/270c_1f3fc/512.gif" alt="✌" width="50" height="50"/>
           </picture>
         </h1>
-        <h3 className="home__subtitle">I'm A Programmer</h3>
+        <h3 className="home__subtitle">
+          <BlurText
+          text="I'm A programmer"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-2xl mb-8"/>
+        </h3>
         <p className="home__description">Im A Full Stack Developer Dedicated To Learning And Improve My Skills</p>
         <a href="#contact" className="button button--flex">
           Say Hello
