@@ -1,4 +1,4 @@
-name: Firebase Deployment
+name: Build, Deploy to Firebase, and Copy to GitHub Pages Repo
 
 on:
   push:
@@ -31,3 +31,19 @@ jobs:
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
         run: firebase deploy --only hosting
+
+      - name: Checkout GitHub Pages repo
+        uses: actions/checkout@v3
+        with:
+          repository: Dhruv7201/Dhruv7201.github.io
+          token: ${{ secrets.GH_PAT }}  # Create a Personal Access Token (PAT) and add it as a secret in GitHub
+
+      - name: Copy build files to GitHub Pages repo
+        run: |
+          rm -rf ./*
+          cp -r ../portfolio/build/* .
+          git add .
+          git config --global user.email "your-email@example.com"
+          git config --global user.name "your-github-username"
+          git commit -m "Deploy updated build from portfolio repo"
+          git push origin main
