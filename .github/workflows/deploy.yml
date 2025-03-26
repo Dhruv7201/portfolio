@@ -29,13 +29,19 @@ jobs:
 
       - name: Check if dist directory exists
         run: |
+          echo "Listing files in workspace:"
+          ls -l  # Lists all files and folders in the current directory
+          
           if [ ! -d "dist" ]; then
             echo "Error: dist/ directory not found!"
             exit 1
           fi
 
-      - name: Archive Build Artifacts
-        run: tar -czf dist.tar.gz dist
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: vite-build
+          path: dist
 
       - name: Checkout GitHub Pages Repo
         uses: actions/checkout@v3
@@ -43,13 +49,16 @@ jobs:
           repository: Dhruv7201/Dhruv7201.github.io
           token: ${{ secrets.GH_PAT }}
 
-      - name: Extract Build Files
-        run: tar -xzf ../dist.tar.gz --strip-components=1 -C .
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: vite-build
+          path: .
 
       - name: Deploy to GitHub Pages
         run: |
           git add .
-          git config --global user.email "dhruv.modi2345@gmail.com"
-          git config --global user.name "DHruv Modi"
+          git config --global user.email "Dhruv.modi2345@gmail.com"
+          git config --global user.name "Dhruv Modi"
           git commit -m "Deploy updated build from portfolio repo" || echo "No changes to commit"
           git push origin main
