@@ -25,7 +25,7 @@ jobs:
         run: npm install -g firebase-tools
 
       - name: Build the project
-        run: npm run build
+        run: npm run build  # Vite generates 'dist/' folder
 
       - name: Check if dist directory exists
         run: |
@@ -34,10 +34,8 @@ jobs:
             exit 1
           fi
 
-      - name: Save Build Artifacts
-        run: |
-          mkdir -p ${{ github.workspace }}/dist_output
-          cp -r ${{ github.workspace }}/dist/* ${{ github.workspace }}/dist_output/
+      - name: Archive Build Artifacts
+        run: tar -czf dist.tar.gz dist
 
       - name: Checkout GitHub Pages Repo
         uses: actions/checkout@v3
@@ -45,12 +43,13 @@ jobs:
           repository: Dhruv7201/Dhruv7201.github.io
           token: ${{ secrets.GH_PAT }}
 
-      - name: Copy Build Files to GitHub Pages Repo
+      - name: Extract Build Files
+        run: tar -xzf ../dist.tar.gz --strip-components=1 -C .
+
+      - name: Deploy to GitHub Pages
         run: |
-          rm -rf ./*
-          cp -r ${{ github.workspace }}/dist_output/* .
           git add .
           git config --global user.email "dhruv.modi2345@gmail.com"
-          git config --global user.name "Dhruv Modi"
+          git config --global user.name "DHruv Modi"
           git commit -m "Deploy updated build from portfolio repo" || echo "No changes to commit"
           git push origin main
