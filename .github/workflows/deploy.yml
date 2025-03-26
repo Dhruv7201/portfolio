@@ -12,8 +12,6 @@ jobs:
     steps:
       - name: Checkout Portfolio Repo
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  # Ensures full history is available
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -29,26 +27,28 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to Firebase
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: firebase deploy --only hosting
+      - name: Check if dist directory exists
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Error: dist/ directory not found!"
+            exit 1
+          fi
 
       - name: Save Build Artifacts
         run: |
-          mkdir -p build_output
-          cp -r build/* build_output/
+          mkdir -p ${{ github.workspace }}/dist_output
+          cp -r ${{ github.workspace }}/dist/* ${{ github.workspace }}/dist_output/
 
       - name: Checkout GitHub Pages Repo
         uses: actions/checkout@v3
         with:
           repository: Dhruv7201/Dhruv7201.github.io
-          token: ${{ secrets.GH_PAT }}  # Use a GitHub PAT stored as a secret
+          token: ${{ secrets.GH_PAT }}
 
       - name: Copy Build Files to GitHub Pages Repo
         run: |
           rm -rf ./*
-          cp -r ../build_output/* .
+          cp -r ${{ github.workspace }}/dist_output/* .
           git add .
           git config --global user.email "dhruv.modi2345@gmail.com"
           git config --global user.name "Dhruv Modi"
