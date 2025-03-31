@@ -1,4 +1,4 @@
-name: Firebase Deployment
+name: Build, Deploy to Firebase, and Copy to GitHub Pages Repo
 
 on:
   push:
@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - name: Checkout Portfolio Repo
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -27,7 +27,41 @@ jobs:
       - name: Build the project
         run: npm run build
 
-      - name: Deploy to Firebase
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-        run: firebase deploy --only hosting
+      - name: Debug List files in workspace
+        run: ls -l
+
+      - name: Check if dist directory exists
+        run: |
+          if [ ! -d "dist" ]; then
+            echo "Error: dist/ directory not found!"
+            exit 1
+          fi
+
+      - name: Upload Build Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: vite-build
+          path: dist
+
+      - name: Checkout GitHub Pages Repo
+        uses: actions/checkout@v4
+        with:
+          repository: Dhruv7201/Dhruv7201.github.io
+          token: ${{ secrets.GH_PAT }}
+
+      - name: Download Build Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: vite-build
+          path: .
+
+      - name: Debug List files after downloading artifact
+        run: ls -l
+
+      - name: Deploy to GitHub Pages
+        run: |
+          git add .
+          git config --global user.email "Dhruv.modi2345@gmail.com"
+          git config --global user.name "Dhruv Modi"
+          git commit -m "Deploy updated build from portfolio repo" || echo "No changes to commit"
+          git push origin main
