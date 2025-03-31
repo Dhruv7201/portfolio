@@ -25,7 +25,7 @@ const Footer = () => {
                     <i className='uil uil-linkedin'></i>
                 </a>
                 <a href="https://twitter.com/dhruv_modi7201" className="footer__social-link" target='_blank'>
-                    <i className='bx bxl-twitter'></i>
+                    <i className='uil uil-twitter'></i>
                 </a>
             </div>
         </div>
