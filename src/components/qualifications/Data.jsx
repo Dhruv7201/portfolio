@@ -1,10 +1,5 @@
 export const experienceData = [
     {
-      title: "Python Developer",
-      subtitle: "Qtech365 (Msbc Group)",
-      calendar: "Jan 2024 - Present",
-    },
-    {
       title: "Associate Software Engineer",
       subtitle: "Ethics InfoTech",
       calendar: "Aug 2023 - Jan 2024",
