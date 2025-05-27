@@ -1,7 +1,6 @@
 import React from "react";
 import "./about.css";
 import AboutImg from "../../assets/profile.jpg";
-import CV from "../../assets/cv.pdf";
 import Info from "./Info";
 
 const About = () => {
@@ -30,7 +29,7 @@ const About = () => {
             Git, Github, Docker, Linux, SQL, NoSQL, REST API, GraphQL, web
             scraping, machine learning, computer vision, and more.
           </p>
-          <a download="" href={CV} className="button button--flex">
+          <a download="Dhruv-CV.pdf" href="/cv.pdf" className="button button--flex">
             Download CV
             <svg
               class="button__icon"
