@@ -37,14 +37,16 @@ const Contact = () => {
 
               <h3 className="contact__card-title">Whatsapp</h3>
               <span className="contact__card-data">7201982878</span>
-              <a href="https://api.whatsapp.com/send?phone=917201982878" className="contact__button">Write me{" "} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
+              <a href="https://api.whatsapp.com/send?phone=917201982878" className="contact__button"
+                target="_blank" rel="noopener noreferrer"
+              >Write me{" "} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
             </div>
             <div className="contact__card">
               <i className="bx bx-current-location"></i>
 
               <h3 className="contact__card-title">Location</h3>
               <span className="contact__card-data">Vadodara, Gujarat, India</span>
-              <a href="https://www.google.com/maps?q='vadodata,gujarat,india'"
+              <a href="https://www.google.com/maps?q='vadodata,gujarat,india'" target="_blank" rel="noopener noreferrer"
                className="contact__button">Write me{" "} <i className="bx bx-right-arrow-alt contact__button-icon"></i></a>
             </div>
           </div>
