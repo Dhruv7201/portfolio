@@ -1,15 +1,20 @@
 export const experienceData = [
   {
-    title: "Associate Software Engineer",
+    title: "AI/ML Engineer",
     subtitle: "Ethics InfoTech",
-    calendar: "Aug 2023 - Jan 2024",
+    calendar: "Dec 2025 - Present",
   },
   {
-    title: "Trainee Software Engineer",
-    subtitle: "Ethics InfoTech",
-    calendar: "Mar 2023 - Aug 2023",
+    title: "Python Developer",
+    subtitle: "MSBC Group",
+    calendar: "Jan 2025 - Dec 2025",
   },
-  ];
+  {
+    title: "Associate Software Engineer",
+    subtitle: "Ethics InfoTech",
+    calendar: "Mar 2023 - Jan 2025",
+  },
+];
 
 export const educationData = [
   {
