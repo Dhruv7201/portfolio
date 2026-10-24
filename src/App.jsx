@@ -1,36 +1,31 @@
-import React, { useEffect } from "react";
-import "./App.css";
-import Header from "./components/header/Header";
-import Home from "./components/home/Home";
-import About from "./components/about/About";
-import Skills from "./components/skills/Skills";
-import Services from "./components/services/Services";
-import Qualification from "./components/qualifications/Qualification";
-import Testimonials from "./components/testimonials/Testimonials";
-import Work from "./components/work/Work";
-import Contact from "./components/contact/Contact";
-import Footer from "./components/footer/Footer";
-import Scrollup from "./components/scrollup/Scrollup";
+import ParticleGlobe from "./components/ParticleGlobe";
+import Nav from "./components/Nav";
+import Hero from "./components/Hero";
+import Works from "./components/Works";
+import Statement from "./components/Statement";
+import SkillRing from "./components/SkillRing";
+import Journey from "./components/Journey";
+import Words from "./components/Words";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
-function App() {
-
+export default function App() {
   return (
     <>
-      <Header />
-      <main className="main">
-        <Home />
-        <About />
-        <Skills />
-        <Services />
-        <Qualification />
-        <Testimonials />
-        <Work />
+      <a href="#work" className="skip">Skip to work</a>
+      <ParticleGlobe />
+      <div className="grain" aria-hidden="true" />
+      <Nav />
+      <main className="content">
+        <Hero />
+        <Works />
+        <Statement />
+        <SkillRing />
+        <Journey />
+        <Words />
         <Contact />
       </main>
       <Footer />
-      <Scrollup />
     </>
   );
 }
-
-export default App;
